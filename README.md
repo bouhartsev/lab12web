@@ -1,2 +1,2 @@
 # lab12web
-About Polytech web program, 1 course, lab12
+Polytech web program, 1 course, lab12
