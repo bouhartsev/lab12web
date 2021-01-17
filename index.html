@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weblab12</title>
+
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Список студентов</h1>
+        <p class="decription">Данная лабораторная работа выполнена Матвеем Бухарцевым в 2021 году. Всё согласно ТЗ. Дальнейшее описание упускается ввиду отсутствия креативности в данный момент. Чтобы всё было красиво, добавим чуть-чуть рыбы.<br>
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi dignissimos, enim sunt quo quaerat aliquam repellat cupiditate, id voluptas ipsa tempora natus maiores placeat blanditiis facilis nihil unde distinctio, nisi.</span>
+        <span>Sed repellat atque fuga est, tempora hic odio ad minima quibusdam. Nobis accusantium aperiam molestiae et ea ad asperiores ipsum dolores fugit veniam hic, voluptate, ex dolorum similique labore libero.</span>
+        <span>Consectetur, praesentium similique nulla corporis. Beatae autem laudantium tempora vitae omnis, eligendi odio odit necessitatibus voluptatum temporibus ipsam nostrum accusantium dolorum, molestiae laborum in. Consequuntur quaerat aliquid nostrum obcaecati nihil!</span><br>
+        Ну или не чуть-чуть :).</p>
+
+        <h2>Форма</h2>
+        <div class="form_main">
+            <form>
+                <p><label for="l_name">Фамилия</label></p>
+                <p><input type="text" id="l_name" v-model="LastName" v-on:input="calc1"></label></p>
+                <p><label for="f_name">Имя</label></p>
+                <p><input type="text" id="f_name" v-model="FirstName" v-on:input="calc2"></p>
+                <p class="calcTitle">Количество знаков: </p>
+                <p class="calcNum">{{ charCalc }}</p>
+                <button type="button" v-on:click="AddNewNote" v-bind:class="{ ButtonActive: MainButton}"><b>Записать</b></button>
+            </form>
+        </div>
+
+		<h2>Список</h2>
+        <p class="ListNull" v-show="visible">Список пуст</p>
+        <div class="List">
+            <ol>
+                <li v-for="note in notes">{{ note }}</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</html>
